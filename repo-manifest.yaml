@@ -13,8 +13,8 @@ origin:
 function:
   purpose: explore_instability_dynamics
   inputs:
-    - phase
     - constraint
+    - phase
   outputs:
     - transition
     - equilibrium
@@ -32,7 +32,10 @@ status:
 relationships:
   upstream:
     - akasha-discovery
-    - akasha-world
-  downstream: []
-  related:
     - akasha-graph-phases
+  downstream:
+    - akasha-transition
+    - akasha-equilibrium
+  related:
+    - akasha-world
+    - akasha-forge
