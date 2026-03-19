@@ -1,3 +1,38 @@
 name: akasha-instability
-domain: exploratory
-status: draft
+
+identity:
+  role: exploratory_module
+  domain: phase_systems
+  target_node: instability
+
+origin:
+  source: akasha-discovery
+  trigger: structural_sink
+  created_from_gap: true
+
+function:
+  purpose: explore_instability_dynamics
+  inputs:
+    - phase
+    - constraint
+  outputs:
+    - transition
+    - equilibrium
+  behaviors:
+    - amplification
+    - propagation
+    - collapse
+    - stabilization
+
+status:
+  maturity: experimental
+  confidence: low
+  active: true
+
+relationships:
+  upstream:
+    - akasha-discovery
+    - akasha-world
+  downstream: []
+  related:
+    - akasha-graph-phases
