@@ -1,46 +1,3 @@
-name: akasha-instability
-identity:
-  role: exploratory_module
-  domain: phase_systems
-  target_node: instability
-origin:
-  source: akasha-discovery
-  trigger: structural_sink
-  created_from_gap: true
-function:
-  purpose: explore_instability_dynamics
-  inputs:
-  - constraint
-  - phase
-  outputs:
-  - transition
-  - equilibrium
-  behaviors:
-  - amplification
-  - propagation
-  - collapse
-  - stabilization
-status:
-  maturity: experimental
-  confidence: low
-  active: true
-relationships:
-  upstream:
-  - akasha-discovery
-  - akasha-graph-phases
-  downstream:
-  - akasha-transition
-  - akasha-equilibrium
-  related:
-  - akasha-world
-  - akasha-forge
-type: module
-role: concept
-domain: systems
-depends_on:
-- akasha-world
-- akasha-constellation
-
 repo:
   name: akasha-instability
   ecosystem: akasha
@@ -50,19 +7,43 @@ repo:
 engine:
   family: pattern
   class: evaluation_engine
-  role: unknown
+  role: instability_detection
+
+identity:
+  role: engine
+  layer: evaluation
+  description: >
+    Instability detection engine for the Akasha constellation.
+    Responsible for identifying volatile structures, oscillating relationships,
+    fragile states, and emerging breakdown conditions across the system.
 
 ownership:
   steward: human
   approval_required: true
 
 interfaces:
-  consumes: []
-  produces: []
+  consumes:
+    - event_records
+    - graph_structures
+    - simulation_outputs
+    - pattern_outputs
+  produces:
+    - instability_reports
+    - volatility_signals
+    - fragile_state_alerts
 
-capabilities: []
+capabilities:
+  - instability_detection
+  - volatility_analysis
+  - fragile_state_surfacing
+  - oscillation_reporting
 
 alignment:
   axioms_required: true
   canonical_structure: true
   interpretation_free_core: true
+
+depends_on:
+  - akasha-events
+  - akasha-attractor
+  - akasha-simulation
