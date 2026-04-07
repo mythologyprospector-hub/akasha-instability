@@ -47,3 +47,11 @@ depends_on:
   - akasha-events
   - akasha-attractor
   - akasha-simulation
+
+# ---- Canonical sections added by akasha-canon ----
+type: organ
+
+family: discovery
+
+role: instability
+
